@@ -15,30 +15,85 @@
 
 <link rel="stylesheet" type="text/css" href="style.css">
 
+<style>
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    .row.content {height: 450px}
+    
+    .sidenav {
+      padding-top: 20px;
+      background-color: navy;
+      height: 100%;
+    }
+    
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;} 
+    }
+  </style>
+
 </head>
 <body>
-<div class="container">
-<button id="logout" onclick="logout()" class="glyphicon glyphicon-log-out btn btn-danger">Logout</button>
-	<center>
-		<h1 class="header">	
-			Kwitter	
-			<sup>
-				<img src="m2.png">
-			</sup>
-		</h1>
-		<h3 id="user_name" class="color_white"></h3>
-		<div class="form-group2 input_div_room_page">
-			<label>#Add Room:</label>
-            <input type="text" id="room_name" class="form-control" placeholder="#Room Name">
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+		  <div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+			  <span class="icon-bar"></span>
+			  <span class="icon-bar"></span>
+			  <span class="icon-bar"></span>                        
+			</button>
+			<a id="user_name" class="navbar-brand" href="#"></a>
+		  </div>
+		  <div class="collapse navbar-collapse" id="myNavbar">
+			<ul class="nav navbar-nav">
+			  <li class="active"><a href="#">Home</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+			<li><a href="#"><span id="logout" onclick="logout()" class="glyphicon glyphicon-log-out btn-danger"></span> logout</a></li>
+			</ul>
+		  </div>
 		</div>
-		<br>
-		<button onclick="addRoom()" class="btn btn-success">#Add Room</button>
-		<h3 class="color_white">#TRENDINGROOMS</h3>
-	
-        <div id="output"></div>
-
-	</center>
-</div>
+	  </nav>
+		
+	  <div class="container-fluid text-center">    
+		<div class="row content">
+		  <div class="col-sm-2 sidenav">
+			
+		  </div>
+		  <div class="col-sm-8 text-left"> 
+			  <center>
+			<h1>Kwitter
+			  <sup>
+			  <img id="image" src="m2.png">
+		  </sup></h1>
+		  <label>#Add Room:</label>
+		  <input type="text" id="room_name" class="form-control" placeholder="#Room Name">
+			<hr>
+			<button onclick="addRoom()" class="btn btn-success">#Add Room</button>
+			<h3 class="color_white">#TRENDINGROOMS</h3>
+			<br> 
+			<div id="output"></div>
+		</center>  
+		</div>
+		  <div class="col-sm-2 sidenav">
+		  </div>
+		</div>
+	  </div>
+	  
+	  <footer class="container-fluid text-center">
+	  </footer>
 <script src="kwitter_room.js"></script>
 </body>
 </html>

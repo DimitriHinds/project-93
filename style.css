@@ -113,3 +113,7 @@ h3, h4
 {
 color: white;
 }
+#image
+{
+	width: 80px;margin-left: -15px;	
+}
